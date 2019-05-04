@@ -15,12 +15,29 @@ $nombre = "Jose";
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- <link rel="stylesheet" href="css/navstyle.css"> -->
     <title>pIntegrador</title>
   </head>
   <body>
+    <header>
+      <nav class="barra">
+        <div class="logo">
+          <img src="img/logo.png" alt="logo">
+        </div>
+        <ul>
+          <li>
+            <a href="productos.php">PRODUCTOS</a></li>
+          <li> <a href="login.php">INGRESA</a></li>
+          <li><a href="registro.php">REGISTRATE</a> </li>
+        </ul>
+      </nav>
+    </header>
 
-    <div class="">
+    <div class="bd-example">
+
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -60,6 +77,7 @@ $nombre = "Jose";
       </a>
     </div>
   </div>
+
 
   <div class="container-fluid">
     <div class="row mt-3">

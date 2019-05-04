@@ -18,14 +18,26 @@ $nombre = "Jose";
     <header>
       <h1>INCLUIR HEADER DE LOGIN</h1>
     </header>
-    <section>
-      <ul>
-        <li>NOMBRE</li>
-        <li>PASSWORD</li>
-      </ul>
-      <p>registrarse</p>
-      <p>olvidé mi contraseña</p>
+    <section class="login">
+
+      <form>
+        <div class="form-group">
+          <label class="exampleInput" for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+        </div>
+        <div class="form-group">
+          <label class="exampleInput" for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+      </form>
 
     </section>
+    <section class="not-login">
+      <button type="submit" class="btn btn-lg btn-secondary">Registrate</button>
+      <button type="submit" class="btn btn-lg btn-secondary">olvidé mi contraseña</button>
+    </section>
+
   </body>
 </html>

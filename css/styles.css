@@ -6,6 +6,8 @@ padding: 0;
 body {
   background: rgb(240, 232, 192);
 }
+
+/**
 .bd-example{
   overflow: hidden;
   width: 80%;
@@ -15,10 +17,15 @@ body {
   margin-top: 0;
   margin-bottom: 0;
 }
+**/
 .card {
   overflow: hidden;
 
 }
 footer {
   display: flex;
+}
+
+header{
+  background-color: gray;
 }
