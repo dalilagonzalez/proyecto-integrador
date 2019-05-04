@@ -1,22 +1,68 @@
 * {
 font-size: 2em;
-background-color: red;
 box-sizing: border-box;
 margin: 0;
-padding
+padding: 0;
 }
-
 body{
 
-background-color: gray;
+background-color: #57DDDC;
 
 }
 
 header{
 
+
 width: 100%;
 height: 400px;
 text-align: center;
 margin-top: 20%;
+
+}
+
+.exampleInput{
+  font-size: 1em;
+}
+
+.commentary{
+  font-size: 0.75em;
+}
+
+.not-login{
+
+  overflow: hidden;
+  margin: 0 auto;
+
+}
+
+
+.not-login button{
+  display: block;
+  float: left;
+  margin: 5%
+}
+
+
+.login{
+
+  font-size: 1em;
+  overflow: hidden;
+  background-color: rgba(179, 182, 183,0.75);
+  width: 90%;
+  height: 450px;
+  padding: 5%;
+  margin: 0 auto;
+  border-radius: 10%;
+
+}
+
+legend{
+  color: #FFF;
+}
+
+ul{
+
+list-style: none;
+font-size: 0.75em;
 
 }
