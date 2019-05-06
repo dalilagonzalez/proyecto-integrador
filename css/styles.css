@@ -26,6 +26,6 @@ footer {
   display: flex;
 }
 
-header{
-  background-color: gray;
+div .navbarlogo {
+  border-radius: 45%;
 }

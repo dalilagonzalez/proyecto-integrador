@@ -23,16 +23,28 @@ $nombre = "Jose";
   </head>
   <body>
     <header>
-      <nav class="barra">
-        <div class="logo">
-          <img src="img/logo.png" alt="logo">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <img class="navbarlogo" src="img/logo2posta.jpg" alt="logo">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="login.php">Ingresa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="registro.php">Registrate</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="productos.php">Home</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar productos..">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
         </div>
-        <ul>
-          <li>
-            <a href="productos.php">PRODUCTOS</a></li>
-          <li> <a href="login.php">INGRESA</a></li>
-          <li><a href="registro.php">REGISTRATE</a> </li>
-        </ul>
       </nav>
     </header>
 
@@ -48,22 +60,22 @@ $nombre = "Jose";
         <div class="carousel-item active">
           <img src="img/img1.jpg" class="d-block w-100" alt="imagen1">
           <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h5>Encontra lo que tu mejor amigo necesita</h5>
+            <p>Alimento balanceado para todas las edades</p>
           </div>
         </div>
         <div class="carousel-item">
           <img src="img/img2.jpeg" class="d-block w-100" alt="imagen2">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h5>Hacelo feliz</h5>
+            <p>Trabajamos con las mejores marcas!</p>
           </div>
         </div>
         <div class="carousel-item">
           <img src="img/img3.jpg" class="d-block w-100" alt="imagen3">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <h5>Encontra eso que estas buscando</h5>
+            <p>Respaldados por las mejores veterinarias del pais!</p>
           </div>
         </div>
       </div>
@@ -84,18 +96,18 @@ $nombre = "Jose";
       <div class="col-sm-12 col-md-6">
           <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">Clinicas veterinarias</h5>
+            <p class="card-text">Trabajamos con mas de 150 clinicas a lo largo de todo el pais.</p>
+            <a href="#" class="btn btn-primary">Buscar clinica cercana</a>
           </div>
         </div>
       </div>
         <div class="col-sm-12 col-md-6">
             <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">El alimento que tu amigo necesita</h5>
+              <p class="card-text">Respaldados por las mejores marcas, tenemos el alimento que tu amigo necesita.</p>
+              <a href="#" class="btn btn-primary">Buscar alimento</a>
             </div>
           </div>
         </div>
@@ -103,18 +115,18 @@ $nombre = "Jose";
           <div class="col-sm-12 col-md-6">
               <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">Te vas de viaje?</h5>
+                <p class="card-text">No te preocupes por tu mascota, contamos con mas de 100 anfitriones que pueden encargarse de el.</p>
+                <a href="#" class="btn btn-primary">Ver hospedajes</a>
               </div>
             </div>
           </div>
             <div class="col-sm-12 col-md-6">
                 <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <h5 class="card-title">Accesorios para mascotas.</h5>
+                  <p class="card-text">Mima a tu mascota con nuestra amplia seleccion de juguetes pensados para el. </p>
+                  <a href="#" class="btn btn-primary">Ver juguetes</a>
                 </div>
               </div>
             </div>
