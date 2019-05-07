@@ -132,13 +132,7 @@ $nombre = "Jose";
             </div>
         </div>
   </div>
-  <footer>
-    <div class="row">
-      <div class="col">
 
-      </div>
-    </div>
-  </footer>
   </body>
 
 </html>
