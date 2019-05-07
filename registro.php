@@ -1,6 +1,14 @@
 <?php
 
-$nombre = "Jose";
+$nombre = "";
+$apellido = "";
+if ($_POST){
+
+  $nombre = $_POST["nombre"];
+  $apellido = $_POST["apellido"];
+
+  //header ("location:datRegistro.php");exit;
+}
 
 ?>
 
@@ -22,6 +30,9 @@ $nombre = "Jose";
 
   </head>
     <body class="">
+      <?php
+        include ("header.php");
+      ?>
       <div class="container">
     <div class="py-5 text-center">
 
@@ -32,18 +43,18 @@ $nombre = "Jose";
 
       <div class="col-md-12 order-md-1">
         <h4 class="mb-3">Datos Personales</h4>
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" action="registro.php" method="post">
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">Nombre</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <input type="text" name="nombre" class="form-control" id="firstName" placeholder="Nombre" value="<?=$nombre?>" required>
               <div class="invalid-feedback">
                 Este campo es obligatorio.
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="lastName">Apellido</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <input type="text" name="apellido" class="form-control" id="lastName" placeholder="Apellido" value="<?=$apellido?>" required>
               <div class="invalid-feedback">
                 Este campo es oblgatorio.
               </div>
@@ -56,8 +67,8 @@ $nombre = "Jose";
               <div class="input-group-prepend">
                 <span class="input-group-text">@</span>
               </div>
-              <input type="text" class="form-control" id="username" placeholder="Usuario" required>
-              <div class="invalid-feedback" style="width: 100%;">
+              <input type="text" name="usuario" class="form-control" id="username" placeholder="Usuario" required>
+              <div class="invalid-feedback" style="">
                 Debe asignar un nombre de usuario.
               </div>
             </div>
@@ -65,7 +76,7 @@ $nombre = "Jose";
 
           <div class="mb-3">
             <label for="email">Correo Electrónico <span class="text-muted">(Optional)</span></label>
-            <input type="email" class="form-control" id="email" placeholder="tumail@tudominio.com">
+            <input type="email" name="email" class="form-control" id="email" placeholder="tumail@tudominio.com">
             <div class="invalid-feedback">
               Por favor ingrese una dirección de correo válida.
             </div>
@@ -73,7 +84,7 @@ $nombre = "Jose";
 
           <div class="mb-3">
             <label for="address">Dirección</label>
-            <input type="text" class="form-control" id="address" placeholder="Mi calle 1234" required>
+            <input type="text" name="direccion" class="form-control" id="address" placeholder="Mi calle 1234" required>
             <div class="invalid-feedback">
               Por favor ingrese una dirección válida.
             </div>
