@@ -25,14 +25,17 @@ background-size: auto;
 .container{
 
   background-color: rgba(179, 182, 183,0.75);
-  margin: 0 auto;
+  margin: 10vh auto 0 auto;
   overflow: hidden;
-  width: 90%;
   font-size: 1em;
   height: 250px;
-  padding-top: 7%;
+  padding-top: 2vh;
   border-radius: 5%;
 
+}
+
+.exampleInput{
+  font-size: 1.5em;
 }
 
 .not-login{
@@ -47,7 +50,7 @@ background-size: auto;
   margin: 5% auto;
 }
 
-@media (min-width: 500px) {
+/*@media (min-width: 500px) {
 
   .container{
 
@@ -131,4 +134,4 @@ background-size: auto;
     font-size: 1.2em;
   }
 
-}
+}*/

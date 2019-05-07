@@ -24,16 +24,16 @@ $nombre = "Jose";
     <?php
       include ("header.php");
     ?>
-      <div class="container">
+      <div class="container col-10 col-md-6 col-lg-4">
           <form>
             <div class="form-group">
-              <label class="exampleInput" for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <label class="exampleInput" for="exampleInputEmail1">Dirección Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
 
             </div>
             <div class="form-group">
-              <label class="exampleInput" for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <label class="exampleInput" for="exampleInputPassword1">Contraseña</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
             <button type="submit" class="btn btn-sm btn-primary">Enviar</button>
           </form>
