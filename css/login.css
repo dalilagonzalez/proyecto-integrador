@@ -1,68 +1,134 @@
 * {
-font-size: 2em;
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-}
-body{
-
-background-color: #57DDDC;
-
+  font-size: 1em;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 header{
 
-
 width: 100%;
-height: 400px;
+height: 200px;
 text-align: center;
-margin-top: 20%;
+margin-top: 5%;
 
 }
 
-.exampleInput{
+body{
+
+font-size: 0.75em;
+background-image: url("../img/1200widthbg.png");
+background-size: auto;
+
+}
+
+.container{
+
+  background-color: rgba(179, 182, 183,0.75);
+  margin: 0 auto;
+  overflow: hidden;
+  width: 90%;
   font-size: 1em;
-}
+  height: 250px;
+  padding-top: 7%;
+  border-radius: 5%;
 
-.commentary{
-  font-size: 0.75em;
 }
 
 .not-login{
 
-  overflow: hidden;
-  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
 
 }
-
 
 .not-login button{
-  display: block;
-  float: left;
-  margin: 5%
+  margin: 5% auto;
 }
 
+@media (min-width: 500px) {
 
-.login{
+  .container{
 
-  font-size: 1em;
-  overflow: hidden;
-  background-color: rgba(179, 182, 183,0.75);
-  width: 90%;
-  height: 450px;
-  padding: 5%;
-  margin: 0 auto;
-  border-radius: 10%;
+    font-size: 1em;
+    height: 30vh;
+    width: 60%;
+    margin-top: 10%;
+    padding-top: 4vh;
+    border-radius: 5%;
+
+  }
+
+  form{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .not-login{
+    width: 50vh;
+    margin: 0 auto;
+  }
+
+  .container-buttons{
+
+    width: 60%
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .exampleInput{
+    font-size: 1.5em;
+  }
+
+  .not-login button{
+    margin: 5% auto;
+    font-size: 1.2em;
+  }
 
 }
 
-legend{
-  color: #FFF;
-}
+@media (min-width: 801px) {
 
-ul{
+  .container{
 
-list-style: none;
-font-size: 0.75em;
+    font-size: 1em;
+    height: 30vh;
+    width: 40%;
+    margin-top: 10%;
+    padding-top: 4vh;
+    border-radius: 5%;
+
+  }
+
+  form{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+
+
+  .not-login{
+    width: 50vh;
+    margin: 0 auto;
+  }
+
+  .container-buttons{
+
+    width: 60%
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .exampleInput{
+    font-size: 1.5em;
+  }
+
+  .not-login button{
+    margin: 5% auto;
+    font-size: 1.2em;
+  }
 
 }
