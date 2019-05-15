@@ -1,6 +1,37 @@
 <?php
 
+$errorArray=[];
+
+$usuario=[
+  "email" => "jgdwindt@gmail.com",
+  "password" => "secret",
+];
+
 $nombre = "Jose";
+if(!empty($_POST)){
+  if(isset($_POST["email"])){
+    if($_POST["email"]==$usuario["email"]){
+    }
+    {
+     $errorArray["email"]="El usuario no está registrado";
+    }
+  if(isset($_POST["password"])){
+    if($_POST["password"]==$usuario["password"]){
+    }
+    {
+      $errorArray["password"]="El password es incorrecto";
+      }
+    }
+    {
+      $errorArray["password"]="el campo Password está vacío";
+    }
+    {
+    $errorArray["email"]="El campo Email está vacío";
+    }
+  }
+  $errorArray[]="El formulario está vacío";
+}
+var_dump($errorArray);
 
 ?>
 
@@ -25,15 +56,15 @@ $nombre = "Jose";
       include ("header.php");
     ?>
       <div class="container col-10 col-md-6 col-lg-4">
-          <form>
+          <form method="POST" action="login.php">
             <div class="form-group">
               <label class="exampleInput" for="exampleInputEmail1">Dirección Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
-
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" >
+              <p><?= $errorArray['email'] ?? '' ?></p>
             </div>
             <div class="form-group">
               <label class="exampleInput" for="exampleInputPassword1">Contraseña</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <input type="password" class="form-control" id="exampleInputPassword1" name="password">
             </div>
             <button type="submit" class="btn btn-sm btn-primary">Enviar</button>
           </form>
