@@ -1,16 +1,45 @@
 <?php
+$errors = [];
+//$value = '';
+ var_dump($_POST);
+ var_dump($errors);
 
-$nombre = "";
-$apellido = "";
-if ($_POST){
+  if (!empty($_POST)){
+    if (empty($_POST['nombre'])) {
+      $errors ['nombre'] = ['Debe ingresar un nombre'] ;
+    }
+    
+    else {
+    $usuario = [
+    'nombre' => $_POST['nombre'],
+    'apellido' => $_POST['apellido'],
+    'email' => $_POST['email'],
+    ];
+    $json = json_encode([$usuario], JSON_PRETTY_PRINT);
+ //var_dump($json);
 
-  $nombre = $_POST["nombre"];
-  $apellido = $_POST["apellido"];
+    if (file_exists('usuarios.json')) {
+    $data = file_get_contents('usuarios.json');
 
-  //header ("location:datRegistro.php");exit;
+    $json = json_decode($data, true);
+
+    $json[] = $usuario;
+
+    $json = json_encode($usuario, JSON_PRETTY_PRINT);
+    }
+
+    file_put_contents('usuarios.json', $json);
+    }
+
+      //header ("location:datRegistro.php");exit;
 }
-
 ?>
+
+<?php foreach ($errors as $error) {
+  foreach ($error as $value) {
+}
+}
+ ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -24,7 +53,8 @@ if ($_POST){
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-      <link rel="stylesheet" href="css/registro.css">
+          <link rel="stylesheet" href="css/normalize.css?<?= rand(99999999,9999)?>">
+      <link rel="stylesheet" href="css/registro.css?<?= rand(99999999,9999)?>">
 
         <title>pRegistro</title>
 
@@ -33,6 +63,7 @@ if ($_POST){
       <?php
         include ("header.php");
       ?>
+
       <div class="container">
     <div class="py-5 text-center">
 
@@ -47,54 +78,68 @@ if ($_POST){
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">Nombre</label>
-              <input type="text" name="nombre" class="form-control" id="firstName" placeholder="Nombre" value="<?=$nombre?>" required>
-              <div class="invalid-feedback">
-                Este campo es obligatorio.
-              </div>
+              <input type="text" name="nombre" class="form-control" id="firstName" placeholder="Nombre" value="">
+              <p><?=$value?></p>
+
             </div>
             <div class="col-md-6 mb-3">
               <label for="lastName">Apellido</label>
-              <input type="text" name="apellido" class="form-control" id="lastName" placeholder="Apellido" value="<?=$apellido?>" required>
+              <input type="text" name="apellido" class="form-control" id="lastName" placeholder="Apellido" value="">
               <div class="invalid-feedback">
+                <p><?=$value?></p>
                 Este campo es oblgatorio.
               </div>
             </div>
           </div>
 
-          <div class="mb-3">
+            <div class="row">
+             <div class="col-md-6 mb-3">
+            <label for="email">Correo Electrónico </label>
+            <input type="text" name="email" class="form-control" id="email" placeholder="tumail@tudominio.com">
+            <div class="invalid-feedback">
+              Por favor ingrese una dirección de correo válida.
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
             <label for="username">Nombre de Usuario</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">@</span>
-              </div>
-              <input type="text" name="usuario" class="form-control" id="username" placeholder="Usuario" required>
+              <input type="text" name="usuario" class="form-control" id="username" placeholder="Usuario" value="">
               <div class="invalid-feedback" style="">
                 Debe asignar un nombre de usuario.
               </div>
             </div>
           </div>
 
-          <div class="mb-3">
-            <label for="email">Correo Electrónico <span class="text-muted">(Optional)</span></label>
-            <input type="email" name="email" class="form-control" id="email" placeholder="tumail@tudominio.com">
-            <div class="invalid-feedback">
-              Por favor ingrese una dirección de correo válida.
+          <div class="row">
+            <div class="col-md-6 mb-3">
+            <label for="password">Contraseña</label>
+              <input type="text" name="contraseña" class="form-control" id="password" placeholder="" value="">
+              <div class="invalid-feedback" style="">
+                  Debe asignar una contraseña.
+                </div>
+              </div>
+
+            <div class="col-md-6 mb-3">
+            <label for="passwordC">Confirme la contraseña</label>
+              <input type="text" name="contraseñaC" class="form-control" id="passwordC" placeholder="" value="">
+              <div class="invalid-feedback" style="">
+                  Debe confirmar la contraseña.
+                  </div>
+                </div>
             </div>
-          </div>
 
           <div class="mb-3">
             <label for="address">Dirección</label>
-            <input type="text" name="direccion" class="form-control" id="address" placeholder="Mi calle 1234" required>
+            <input type="text" name="direccion" class="form-control" id="address" placeholder="Mi calle 1234">
             <div class="invalid-feedback">
               Por favor ingrese una dirección válida.
             </div>
           </div>
 
-
           <div class="row">
             <div class="col-md-5 mb-3">
               <label for="prov">Provincia</label>
-              <select class="custom-select d-block w-100" id="prov" required>
+              <select class="custom-select d-block w-100" id="prov" name="provincia">
                 <option value="">Seleccione...</option>
                 <option>C.A.B.A.</option>
                 <option>Provincia de Buenos Aires</option>
@@ -106,7 +151,7 @@ if ($_POST){
             </div>
             <div class="col-md-4 mb-3">
               <label for="sector">Barrio</label>
-              <select class="custom-select d-block w-100" id="sector" required>
+              <select class="custom-select d-block w-100" id="sector" name="barrio">
                 <option value="">Seleccione...</option>
                 <option>Palermo</option>
                 <option>Almagro</option>
@@ -118,39 +163,40 @@ if ($_POST){
             </div>
             <div class="col-md-3 mb-3">
               <label for="zip">Cod. Postal</label>
-              <input type="text" class="form-control" id="zip" placeholder="" required>
+              <input type="text" class="form-control" name="zip" id="zip" placeholder="">
               <div class="invalid-feedback">
                 Zip requerido.
               </div>
             </div>
           </div>
 
+
            <br>
           <h4 class="mb-3">Datos de su mascota</h4>
             <p class="lead">Sexo.</p>
           <div class="d-block my-3">
             <div class="custom-control custom-radio">
-              <input id="sex" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-              <label class="custom-control-label" for="credit">Hembra</label>
+              <input id="sex" name="sexo" type="radio" class="custom-control-input">
+              <label class="custom-control-label" for="sex">Hembra</label>
             </div>
             <div class="custom-control custom-radio">
-              <input id="sex" name="paymentMethod" type="radio" class="custom-control-input" required>
-              <label class="custom-control-label" for="debit">Macho</label>
+              <input id="sexm" name="sexo" type="radio" class="custom-control-input">
+              <label class="custom-control-label" for="sexm">Macho</label>
             </div>
-
           </div>
+
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="a-name">Nombre</label>
-              <input type="text" class="form-control" id="a-name" placeholder="" required>
-              <small class="text-muted">Nombre de su mascota</small>
+              <input type="text" class="form-control" name="nombrePet" id="a-name" placeholder="">
+
               <div class="invalid-feedback">
                 Debe ingresar un nombre
               </div>
             </div>
             <div class="col-md-6 mb-3">
-              <label for="a-number">Clase</label>
-              <select class="custom-select d-block w-100" id="a-name" required>
+              <label for="a-name">Clase</label>
+              <select class="custom-select d-block w-100" name="clasePet" id="a-name">
                 <option value="">Seleccione...</option>
                 <option>Perro</option>
                 <option>Gato</option>
@@ -160,22 +206,24 @@ if ($_POST){
               </div>
             </div>
           </div>
+
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="dateB">Fecha de Nacimiento</label>
-              <input type="date" class="form-control" id="dateB" placeholder="" required>
+              <input type="date" class="form-control" name="nacimiento" id="dateB" placeholder="">
               <div class="invalid-feedback">
                 Elija una fecha valida
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="age">Edad</label>
-              <input type="text" class="form-control" id="age" placeholder="" required>
+              <input type="text" class="form-control" name="edadPet" id="age" placeholder="">
               <div class="invalid-feedback">
                 Seleccione un valor válido
               </div>
             </div>
           </div>
+
           <hr class="mb-4">
           <button class="btn btn-primary btn-lg btn-block" type="submit">REGISTRARSE</button>
         </form>
