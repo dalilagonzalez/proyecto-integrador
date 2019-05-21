@@ -1,74 +1,32 @@
-{
-    "nombre": "",
-    "apellido": "Sarmiento",
-    "email": ""
-}{
-    "nombre": "Otto",
-    "apellido": "Flores",
-    "email": ""
-}{
-    "nombre": "Lupita",
-    "apellido": "Ferrer",
-    "email": "lferrer@rcr.com",
-    "usuario": "loquitamia",
-    "contrase\u00f1a": "$2y$10$qo1pYUOALm0YYNQiFpPpguWjLnAd2M3w4JfC.qcWws0lwQfLZY0ke"
-}{
-    "nombre": "Raul",
-    "apellido": "Amundarai",
-    "email": "ramundarai@vtv.com",
-    "usuario": "peluquin",
-    "contrase\u00f1a": "$2y$10$dtL7siZR9aN9qg2Hveh5GuvCKDCpB1iDE5bf5LbRBU7JyWhqnE8f2"
-}{
-    "nombre": "Barbara",
-    "apellido": "Palacios",
-    "email": "bpalacios@mvnzla.com",
-    "usuario": "miss",
-    "contrase\u00f1a": "$2y$10$6PpOr1ELGNvLBzfu2L6PKO3dgUPrWPmrDcwb80irY8OxTYJrEylr2",
-    "direccion": "El Hatillo 456",
-    "provincia": "C.A.B.A",
-    "barrio": "La Boca",
-    "zip": "2345",
-    "sexo": "masculino"
-}{
-    "nombre": "Edgar",
-    "apellido": "Ramirez",
-    "email": "erramirez@peliculas.com",
-    "usuario": "Cacique",
-    "contrase\u00f1a": "$2y$10$ojjQ1L2dJelG.tMzrmJMn.r703\/.8qAEGQknzwsUvUKAY5hBF05GK",
-    "direccion": "Los Angeles 90210",
-    "provincia": "Santa Cruz",
-    "barrio": "Monserrat",
-    "zip": "4444",
-    "sexo": "femenino",
-    "nombrePet": "Bendita",
-    "clasePet": "Gato",
-    "nacimiento": false
-}{
-    "nombre": "Edgar",
-    "apellido": "Ramirez",
-    "email": "erramirez@peliculas.com",
-    "usuario": "Cacique",
-    "contrase\u00f1a": "$2y$10$92NI.QtHf8q0n0\/UwNn56.ChLJVa1Rw2w0\/9XZ1vjB096JS8hVr5O",
-    "direccion": "Los Angeles 90210",
-    "provincia": "Santa Cruz",
-    "barrio": "Monserrat",
-    "zip": "4444",
-    "sexo": "femenino",
-    "nombrePet": "Bendita",
-    "clasePet": "Gato",
-    "nacimiento": "2015-02-11"
-}{
-    "nombre": "Otto",
-    "apellido": "Flores",
-    "email": "oflores@summa.com",
-    "usuario": "tecnico",
-    "contrase\u00f1a": "$2y$10$jFnt3N8clACEs6Od5QtWSuBMtKkhbLzNPZ17xfdNahwsZqQYpRTTK",
-    "direccion": "Las Malvinas 1111",
-    "provincia": "La Rioja",
-    "barrio": "Coghlan",
-    "zip": "2111",
-    "sexo": "masculino",
-    "nombrePet": "Rick",
-    "clasePet": "Tortuga",
-    "nacimiento": "2012-10-25"
-}
+[
+    {
+        "nombre": "Otto",
+        "apellido": "Flores",
+        "email": "jgarcia@gnb.com",
+        "usuario": "tecnico",
+        "contrasenia": "$2y$10$AytZdLtW\/ygHW.XwaywEKe6IM9KAMhg31L0ufL.otVSgjIME4JFh6",
+        "direccion": "Las Malvinas 1111",
+        "provincia": "San Juan",
+        "barrio": "Liniers",
+        "zip": "1234",
+        "sexo": "masculino",
+        "nombrePet": "qq",
+        "clasePet": "Chimpanc\u00e9",
+        "nacimiento": "2019-05-14"
+    },
+    {
+        "nombre": "Gabriela",
+        "apellido": "Amundarai",
+        "email": "bpalacios@mvnzla.com",
+        "usuario": "juli",
+        "contrasenia": "$2y$10$0Vqk0t1qpELh78h\/Uy7tY.glcY2t7XuBz7Vi.6NImC.5SMfyhBLr6",
+        "direccion": "El Hatillo 456",
+        "provincia": "Mendoza",
+        "barrio": "Monte Castro",
+        "zip": "1111",
+        "sexo": "femenino",
+        "nombrePet": "Bendita",
+        "clasePet": "Serpiente",
+        "nacimiento": "2019-05-15"
+    }
+]

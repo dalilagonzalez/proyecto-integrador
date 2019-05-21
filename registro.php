@@ -91,20 +91,23 @@ $fechaActual = date('d-m-y');
     'clasePet' => $_POST['clasePet'],
     'nacimiento' => $_POST['nacimiento'],
     ];
-    $json = json_encode([$usuario], JSON_PRETTY_PRINT);
+    //$json = json_encode([$usuario], JSON_PRETTY_PRINT);
  //var_dump($json);
 
     if (file_exists('usuarios.json')) {
     $data = file_get_contents('usuarios.json');
+    $array = json_decode($data, true);
 
-    $json = json_decode($data, true);
+    $array[] = $usuario;
 
-    $json[] = $usuario;
+    $json = json_encode($array, JSON_PRETTY_PRINT);
 
-    $json = json_encode($usuario, JSON_PRETTY_PRINT);
+    //var_dump($json);
+      file_put_contents('usuarios.json', $json);
+
     }
 
-    file_put_contents('usuarios.json', $json, FILE_APPEND);
+    //file_put_contents('usuarios.json', $json);
   }
    }
     }
@@ -137,8 +140,8 @@ $fechaActual = date('d-m-y');
       ?>
 
       <!-- Mostramos errores por HTML -->
-        <?php if (isset($errors)): ?>
-          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <?php if (!empty($errors)): ?>
+          <div class="alert alert-warning alert-dismissible fade show posic" role="alert">
     <strong>Alerta!</strong> Revise los errores a continuación.
             <br>
             <ul class="errores">
@@ -155,6 +158,7 @@ $fechaActual = date('d-m-y');
         </button>
       </div>
         <?php endif; ?>
+
 
       <div class="container">
     <div class="py-5 text-center">
