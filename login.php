@@ -1,38 +1,26 @@
 <?php
 
+session_start();
+
+// creo el array de errores vacio
 $errorArray=[];
 
-$usuario=[
-  "email" => "jgdwindt@gmail.com",
-  "password" => "secret",
-];
-
-$nombre = "Jose";
 if(!empty($_POST)){
-  if(isset($_POST["email"])){
-    if($_POST["email"]==$usuario["email"]){
-    }
-    {
-     $errorArray["email"]="El usuario no está registrado";
-    }
-  if(isset($_POST["password"])){
-    if($_POST["password"]==$usuario["password"]){
-    }
-    {
-      $errorArray["password"]="El password es incorrecto";
-      }
-    }
-    {
-      $errorArray["password"]="el campo Password está vacío";
-    }
-    {
-    $errorArray["email"]="El campo Email está vacío";
+  // si no esta vacio el campo email Y si no esta vacio el campo password
+  if (!empty($_POST['email']) && !empty($_POST['password'])) {
+    $dataJson = file_get_contents("usuarios.json");
+
+    $arrayUsuarios = json_decode($dataJson,true);
+
+    foreach($arrayUsuarios as $usuarios){
+          if($usuarios["email"]===$_POST["email"] && password_verify($_POST["password"], $usuarios["password"])) {
+            $_SESSION["email"] = $usuario["email"];
+            setcookie("login_usuario",$usuario["email"],time()+60*60*24);
+            header('location:index.php');
+            }
+          }
     }
   }
-  $errorArray[]="El formulario está vacío";
-}
-var_dump($errorArray);
-
 ?>
 
 <!DOCTYPE html>

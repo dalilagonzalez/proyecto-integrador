@@ -11,11 +11,11 @@ $fechaActual = date('d-m-y');
  //var_dump($provincia);
 
   if (!empty($_POST)){
-    if (empty($_POST['nombre'])) {
-      $errors ['nombre'] [] = MSJ . ' ' . 'Debe ingresar un nombre';
+    if (empty($_POST['name'])) {
+      $errors ['name'] [] = MSJ . ' ' . 'Debe ingresar un nombre';
     }
-    if (is_numeric($_POST['nombre'])) {
-      $errors ['nombre'] [] = MSJ . ' ' . 'No se permite ingresar valores numericos para el nombre';
+    if (is_numeric($_POST['name'])) {
+      $errors ['name'] [] = MSJ . ' ' . 'No se permite ingresar valores numericos para el nombre';
     }
     if (empty($_POST['apellido'])) {
       $errors ['apellido'] [] = MSJ . ' ' . 'Debe ingresar un apellido';
@@ -35,7 +35,7 @@ $fechaActual = date('d-m-y');
     if (strlen($_POST['contrasenia']) < 6) {
       $errors ['contrasenia'] [] = MSJ . ' ' . 'La contraseña debe tener al menos 6 caracteres';
     }
-    if (empty($_POST['contraseñaC'])) {
+    if (empty($_POST['contrasenia'])) {
       $errors ['contrasenia'] [] = MSJ . ' ' . 'Debe confirmar la contraseña';
     }
     if ($_POST['contraseñaC'] != $_POST['contrasenia'] ) {
@@ -77,7 +77,7 @@ $fechaActual = date('d-m-y');
     else {
       if (empty($errors)) {
     $usuario = [
-    'nombre' => $_POST['nombre'],
+    'name' => $_POST['name'],
     'apellido' => $_POST['apellido'],
     'email' => $_POST['email'],
     'usuario' => $_POST['usuario'],
@@ -170,17 +170,17 @@ $fechaActual = date('d-m-y');
 
       <div class="col-md-12 order-md-1">
         <h4 class="mb-3">Datos Personales</h4>
-        <form class="needs-validation" action="registro.php" method="post">
+        <form class="needs-validation" action="registro.php" method="post" enctype="multipart/form-data">
 
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">Nombre</label>
-              <input type="text" name="nombre" class="form-control" id="firstName" placeholder="" value="">
+              <input type="text" name="name" class="form-control" id="firstName" value="<?= $_POST['name'] ?? ''?>">
               <p></p>
             </div>
               <div class="col-md-6 mb-3">
               <label for="lastName">Apellido</label>
-              <input type="text" name="apellido" class="form-control" id="lastName" placeholder="" value="">
+              <input type="text" name="apellido" class="form-control" id="lastName" placeholder="" value="<?= $_POST['apellido'] ?? ''?>">
               <p></p>
             </div>
           </div>
@@ -188,12 +188,12 @@ $fechaActual = date('d-m-y');
             <div class="row">
              <div class="col-md-6 mb-3">
             <label for="email">Correo Electrónico </label>
-            <input type="text" name="email" class="form-control" id="email" placeholder="">
+            <input type="text" name="email" class="form-control" id="email" placeholder="" value="<?= $_POST['email'] ?? ''?>">
             </div>
 
           <div class="col-md-6 mb-3">
             <label for="username">Nombre de Usuario</label>
-              <input type="text" name="usuario" class="form-control" id="username" placeholder="" value="">
+              <input type="text" name="usuario" class="form-control" id="username" placeholder="" value="<?= $_POST['usuario'] ?? ''?>">
             </div>
           </div>
 
@@ -211,7 +211,7 @@ $fechaActual = date('d-m-y');
 
           <div class="mb-3">
             <label for="address">Dirección</label>
-            <input type="text" name="direccion" class="form-control" id="address" placeholder="">
+            <input type="text" name="direccion" class="form-control" id="address" placeholder="" value="<?= $_POST['direccion'] ?? ''?>">
             </div>
 
           <div class="row">
@@ -243,11 +243,17 @@ $fechaActual = date('d-m-y');
             </div>
             <div class="col-md-3 mb-3">
               <label for="zip">Cod. Postal</label>
-              <input type="text" class="form-control" name="zip" id="zip" placeholder="">
+              <input type="text" class="form-control" name="zip" id="zip" placeholder="" value="<?= $_POST['zip'] ?? ''?>">
               <div class="invalid-feedback">
                 Zip requerido.
               </div>
             </div>
+          </div>
+
+          <div id="avatarregistro" class="col-md-3 mb-3">
+            <label for="avatar">Avatar</label>
+            <input type="file" name="avatar" value="">
+
           </div>
 
 
