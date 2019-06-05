@@ -4,26 +4,30 @@ margin: 0;
 padding: 0;
 }
 body {
-  background: rgb(240, 232, 192);
+  background-image: url("../img/1200widthbg.png");
+  background-size: auto;
 }
 
-/**
-.bd-example{
+
+./*bd-example{
   overflow: hidden;
-  width: 80%;
-  height: 50%;
+  width: 1400px;
+  height: 900px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-}
-**/
+}*/
+
 .card {
   overflow: hidden;
 
 }
 footer {
   display: flex;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top:90px;
+  padding-bottom: 40px;
 }
 
 div .navbarlogo {
