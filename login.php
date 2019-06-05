@@ -58,9 +58,9 @@ if(!empty($_POST)){
   </div>
   <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
   </div>
-  <button type="submit" class="btn btn-info btn-block login">Submit</button>
+  <button type="submit" class="btn btn-info btn-block login">Enviar</button>
 </div>
 </form>
 </div>
