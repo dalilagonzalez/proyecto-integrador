@@ -1,0 +1,185 @@
+* {
+  /*font-size: 1em;*/
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header{
+
+width: 100%;
+height: 200px;
+text-align: center;
+/*margin-top: 5%;*/
+
+}
+
+body{
+
+/*font-size: 0.75em;*/
+background-image: url("../img/1200widthbg.png");
+background-size: auto;
+
+}
+
+.containerLogin{
+background-color: rgba(255, 255, 255, 0.5);
+overflow: hidden;
+font-size: 1em;
+  height:430px;
+  width: 350px;
+  padding-top: 0vh;
+  margin: 0 auto;
+  border-radius: 20%;
+}
+
+.avatar{
+    width: 100px;height: 100px;
+    margin: 20px auto 30px;
+    border-radius: 100%;
+    border: 2px solid #aaa;
+    background-size: cover;
+}
+
+.formi{
+  overflow: hidden;
+}
+.cont-group{
+  margin-top: 18px;
+}
+
+.form-group{
+overflow: hidden;
+margin-left: 50px;
+margin-top: 1px;
+margin-right: 50px;
+margin-bottom: 10px;
+}
+
+.form-check {
+  margin-left: 50px;
+  margin-top: 1px;
+  margin-right: 50px;
+  margin-bottom: 10px;
+}
+
+.btn {
+/* margin-left: 130px;
+margin-right: 150px; */
+margin: 0 auto;
+width: 180px;height: 40px;
+}
+
+
+  /*border-radius: 5%;
+}
+
+.exampleInput{
+  font-size: 1.5em;
+}
+
+.not-login{
+
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+
+}
+
+.not-login button{
+  margin: 5% auto;
+
+} */
+
+footer {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top:90px;
+  padding-bottom: 40px;
+}
+
+/*@media (min-width: 500px) {
+
+  .container{
+
+    font-size: 1em;
+    height: 30vh;
+    width: 60%;
+    margin-top: 10%;
+    padding-top: 4vh;
+    border-radius: 5%;
+
+  }
+
+  form{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .not-login{
+    width: 50vh;
+    margin: 0 auto;
+  }
+
+  .container-buttons{
+
+    width: 60%
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .exampleInput{
+    font-size: 1.5em;
+  }
+
+  .not-login button{
+    margin: 5% auto;
+    font-size: 1.2em;
+  }
+
+}
+
+@media (min-width: 801px) {
+
+  .container{
+
+    font-size: 1em;
+    height: 30vh;
+    width: 40%;
+    margin-top: 10%;
+    padding-top: 4vh;
+    border-radius: 5%;
+
+  }
+
+  form{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+
+
+  .not-login{
+    width: 50vh;
+    margin: 0 auto;
+  }
+
+  .container-buttons{
+
+    width: 60%
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .exampleInput{
+    font-size: 1.5em;
+  }
+
+  .not-login button{
+    margin: 5% auto;
+    font-size: 1.2em;
+  }
+
+}*/
