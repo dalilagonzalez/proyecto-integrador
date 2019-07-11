@@ -5,7 +5,7 @@ $clase = [
           'Gato',
           'Conejo',
           'Hamster',
-          'Chimpancé',
+          'Chimpance',
           'Serpiente',
           'Ave',
           'Pez',
