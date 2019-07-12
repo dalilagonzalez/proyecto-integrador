@@ -1,26 +1,34 @@
 <?php
+require_once('src/Entities/User.php');
+require_once('src/Entities/AccessUser.php');
+require_once('src/Entities/conexion.php');
 
 session_start();
 
-// creo el array de errores vacio
-$errorArray=[];
+	$user=new User();
+//	$user->setEmail($_POST['email']);
+	$access=new AccUser();
+
+var_dump($_POST);
 
 if(!empty($_POST)){
-  // si no esta vacio el campo email Y si no esta vacio el campo password
-  if (!empty($_POST['email']) && !empty($_POST['password'])) {
-    $dataJson = file_get_contents("usuarios.json");
+  if (isset($_POST['entrar'])) {
+  $user=$access->obtenerUsuario($_POST['email'],$_POST['passwd']);
+  // si el id del objeto retornado no es null, quiere decir que encontro un registro en la base
 
-    $arrayUsuarios = json_decode($dataJson,true);
-
-    foreach($arrayUsuarios as $usuarios){
-          if($usuarios["email"]===$_POST["email"] && password_verify($_POST["password"], $usuarios["password"])) {
-            $_SESSION["email"] = $usuario["email"];
-            setcookie("login_usuario",$usuario["email"],time()+60*60*24);
-            header('location:index.php');
-            }
-          }
-    }
+  if ($user = ) {
+    $_SESSION['user']=$user; //si el usuario se encuentra, crea la sesión de usuario
+    header('Location: cuenta.php'); //envia a la página que simula la cuenta
+  }else{
+    header('Location: error.php?mensaje=Tus nombre de usuario o clave son incorrectos'); // cuando los datos son incorrectos envia a la página de error
   }
+}elseif(isset($_POST['salir'])){ // cuando presiona el botòn salir
+  header('Location: index.php');
+  unset($_SESSION['user']); //destruye la sesión
+}
+
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -44,23 +52,26 @@ if(!empty($_POST)){
       include ("header.php");
     ?>
     <div class="containerLogin">
-    <form class=formi>
+    <div class=formi>
        <div class="avatar"></div>
-      <div class=cont-group>
-  <div class="form-group">
+  <form class="needs-validation" action="login.php" method="post"
+
+		  <div class=cont-group>
+			<div class="form-group">
     <label for="exampleInputEmail1">Email</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email">
       <p><?= $errorArray['email'] ?? '' ?></p>
     </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Contraseña</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input type="password" class="form-control" id="exampleInputPassword1" name="passwd" placeholder="Password">
   </div>
   <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
   </div>
-  <button type="submit" class="btn btn-info btn-block login">Enviar</button>
+  <button type="submit" class="btn btn-info btn-block login" name="entrar" >Enviar</button>
+</div>
 </div>
 </form>
 </div>
