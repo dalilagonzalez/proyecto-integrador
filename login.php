@@ -1,26 +1,59 @@
 <?php
+  require_once('src/Entities/conexion.php');
+  require_once('src/Entities/User.php');
+  require_once('src/Entities/AccessUser.php');
+  require_once('src/Validators/loginValidator.php');
 
 session_start();
 
-// creo el array de errores vacio
+var_dump($_POST);
+
+
 $errorArray=[];
 
-if(!empty($_POST)){
-  // si no esta vacio el campo email Y si no esta vacio el campo password
-  if (!empty($_POST['email']) && !empty($_POST['password'])) {
-    $dataJson = file_get_contents("usuarios.json");
+ if(!empty($_POST)){
 
-    $arrayUsuarios = json_decode($dataJson,true);
 
-    foreach($arrayUsuarios as $usuarios){
-          if($usuarios["email"]===$_POST["email"] && password_verify($_POST["password"], $usuarios["password"])) {
-            $_SESSION["email"] = $usuario["email"];
-            setcookie("login_usuario",$usuario["email"],time()+60*60*24);
-            header('location:index.php');
-            }
-          }
-    }
+  if (!isset($_POST['email'])) {
+     $errorArray['email'][] ='El campo Email es requerido';
   }
+
+  if (empty($_POST['email'])) {
+    $errorArray['email'][] ='El campo Email está vacío';
+  }
+
+  if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+    $errorArray['email'][] ='el valor ingresado no es un email válido';
+  }
+
+  if (!isset($_POST['password'])) {
+     $errorArray['password'][] ='El password es requerido';
+  }
+
+  if (strlen($_POST['password']) < 6 || strlen($_POST['password']) > 12 ) {
+    $errorArray['password'][] ='El password debe tener entre 6 y 12 caracteres';
+  }
+
+  if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+    $errorArray['email'][] ='el valor ingresado no es un email válido';
+  }
+}
+
+
+// Traer los valores de email y password desde DB
+// validar los valores de POST con la consulta de DB y hacer login
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -44,25 +77,26 @@ if(!empty($_POST)){
       include ("header.php");
     ?>
     <div class="containerLogin">
-    <form class=formi>
-       <div class="avatar"></div>
-      <div class=cont-group>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email">
-      <p><?= $errorArray['email'] ?? '' ?></p>
-    </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Contraseña</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
-  </div>
-  <button type="submit" class="btn btn-info btn-block login">Enviar</button>
-</div>
-</form>
+    <form method="POST" novalidate>
+      <div class="avatar"></div>
+      <div "form-control form-control-lg">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email">
+            <p class="font-weight-light"><?= $errorArray['email'][0] ?? '' ?></p>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Contraseña</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+            <p class="font-weight-light"><?= $errorArray['password'][0] ?? '' ?></p>
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">
+          <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
+        </div>
+        <button type="submit" class="btn btn-info btn-block login">Enviar</button>
+      </div>
+    </form>
 </div>
     <?php
       include ("footer.php");

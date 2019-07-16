@@ -1,6 +1,6 @@
 <?php
 
-$nombre = "Jose";
+//$nombre = "Jose";
 
 ?>
 

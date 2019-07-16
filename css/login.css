@@ -27,15 +27,15 @@ background-color: rgba(255, 255, 255, 0.5);
 overflow: hidden;
 font-size: 1em;
   height:430px;
-  width: 350px;
+  width: 550px;
   padding-top: 0vh;
   margin: 0 auto;
-  border-radius: 20%;
+  border-radius: 10%;
 }
 
 .avatar{
-    width: 100px;height: 100px;
-    margin: 20px auto 30px;
+    width: 80px;height: 80px;
+    margin: 10px auto 15px;
     border-radius: 100%;
     border: 2px solid #aaa;
     background-size: cover;
